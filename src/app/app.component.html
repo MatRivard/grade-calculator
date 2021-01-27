@@ -1,0 +1,63 @@
+<header>
+  <img width="200" alt="Angular Logo" src="/assets/imgs/u_of_tears.png">
+</header>
+
+<div class="banner">
+  <div class="banner-text">
+    <h1>
+      Calculate and Cry
+    </h1>
+  </div>
+</div>
+
+
+<div style="text-align:center">
+</div>
+<div class="cards-wrapper">
+  <h1 class="page-title centered">
+    Grade Calculator
+  </h1>
+
+  <h2>My Courses</h2>
+  <div class="add-courses">
+    <button class="btn" (click)="addCourse()">
+      +
+    </button>
+  </div>
+  <div class="no-items centered">
+    <span *ngIf="!courses.length">You currently do not have any courses listed. </span>Click the "+" icon to add a course.
+  </div>
+
+
+  <!-- Course cards -->
+  <ul class="grid cards">
+    <li *ngFor="let course of courses" class="course-card">
+      <h2>
+        <div class="delete-btn right">
+          <button class="btn" (click)="deleteSelection(course)">x</button>
+        </div>
+        <input class="course-desc" placeholder="Add Course Name" [(ngModel)]="course.courseName">
+      </h2>
+      <div *ngFor="let item of course.assignments" class="course-description">
+        <div class="centered">
+          <input placeholder="Assigment description" [(ngModel)]="item.Description">
+        </div>
+        <div class="criteria">How much of final grade assignment is worth (%): <input class="assignment-pct" [(ngModel)]="item.Percentage" placeholder="-"></div>
+        <div class="criteria">Grade received (%): <input class="assignment-grade" [(ngModel)]="item.Grade" placeholder="-"></div>
+      </div>
+
+      <div class="calculations">
+        <div class="criteria">How much final exam is worth (%): <input [(ngModel)]="course.examPercentage" placeholder="-" class="exam-pct"></div>
+         <div class="criteria">Grade I want to finish with (%): <input [(ngModel)]="course.finalGrade" placeholder="-"></div>
+         <div class="centered bold">Grade needed on final exam: <span class="exam-grade">{{course.examGrade}} %</span></div>
+      </div>
+
+      <div class="bottom-buttons centered">
+        <button class="btn" (click)="calculateGrade(course)">Calculate</button>
+        <button class="btn" (click)="addAssignment(course)">Add Assignment</button>
+      </div>  
+    </li>
+
+  </ul>
+</div>
+<router-outlet></router-outlet>

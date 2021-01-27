@@ -1,0 +1,179 @@
+header {
+  background: rgba(0,32,78, 1);
+  text-align: center;
+  box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.75);
+  margin-bottom: 3px;
+  color: #fff;
+  padding: 10px 0;
+  h1 {
+    margin: 0;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+  float: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// Banner styles
+.banner {
+  background-image: url('/assets/imgs/UC_banner.png');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  height: 350px;
+  width: auto;
+
+  .banner-text {
+    text-align: center; 
+    color: #fff;
+    position: absolute;
+    left: 15%;
+    top: 300px;
+    background-color: rgba(0,32,78, 0.7);
+    padding: 20px;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+.no-items {
+  padding-bottom: 30px;
+}
+
+.add-courses {
+  text-align: right;
+}
+
+//Button Styles
+.delete-btn .btn {
+  padding: 1px 5px;
+  background: #083476;
+  color: #fff;
+}
+
+.delete-btn .btn:hover {
+  background: #fff;
+  color: #083476;
+}
+
+.btn {
+  padding: 6px 10px;
+  background: #00204E;
+  color: #fff;
+  margin-bottom: 10px;
+  border: solid 2px #00204E;
+  border-radius: 4px;
+}
+.btn:hover {
+  background: #fff;
+  color: #00204E;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+
+
+// Card styles
+.cards-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  color: #002a5c;
+  min-height: 300px;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+  min-height: 200px;
+}
+
+.cards .course-desc {
+  font-size: 16px;
+}
+
+.cards input {
+  background: #083476;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 0;
+  text-align: center;
+  width: auto;
+}
+
+.cards li {
+  border: 2px solid #00204E;
+  border-radius:5px;
+  background-color: #FFF;
+}
+
+.cards h2 {
+  background-color: #00204E;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.cards .course-description {
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto;
+  color: #083476;
+  background: #fff;
+  border: solid 1px #083476;
+  border-radius: 5px;
+
+  .criteria:not(:last-child) {
+    border-bottom: 1px solid;
+  }
+
+}
+.criteria input,
+.calculations input {
+  float: right;
+  width: 30px;
+  border: 1px solid;
+  border-radius: 0;
+  color: black;
+  background: white;
+}
+.criteria {
+  padding: 20px 0;
+}
+
+.calculations {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.bottom-buttons .btn:first-child {
+  margin-right: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr)
+  }
+}
