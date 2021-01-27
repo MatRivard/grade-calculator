@@ -1,6 +1,5 @@
-import { Component }   from '@angular/core';
+import { Component, OnInit }   from '@angular/core';
 import { Course }      from './card';
-import { COURSES }		 from './mock-courses';
 import { Assignment }  from './assignment';
 
 
@@ -10,10 +9,18 @@ import { Assignment }  from './assignment';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public courses: Course[] = [];
+
+  ngOnInit() {
+    if (localStorage.getItem("courses") !== null) {
+      this.courses = JSON.parse(localStorage.getItem("courses"))
+    }
+
+    console.log('local storage stuff', localStorage.getItem("courses"))
+  }
 
   examGrade: number;
-	courses = COURSES;
 
   addCourse() {
     const newCourse = new Course();
@@ -23,6 +30,7 @@ export class AppComponent {
     newCourse.courseName = '';
     newCourse.assignments = []
     this.courses.push(newCourse)
+    localStorage.setItem('courses', JSON.stringify(this.courses))
   }
 
   addAssignment(course) {
@@ -36,6 +44,10 @@ export class AppComponent {
     if (index != -1) {
       this.courses.splice(index, 1)
     }
+  }
+
+  saveCourses() {
+   localStorage.setItem('courses', JSON.stringify(this.courses))
   }
 
   calculateGrade(course) {
@@ -55,7 +67,7 @@ export class AppComponent {
       window.alert('Hope your exam doesn\'t involve math. Try adding your percentages up again and see if you get 100')
     }
     else {
-     course.examGrade = ((course.finalGrade - sum)*(100/course.examPercentage))
+     course.examGrade = ((course.finalGrade - sum)*(100/course.examPercentage)).toFixed(2)
     }
   }
 }

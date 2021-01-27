@@ -55,6 +55,10 @@ header {
   text-align: right;
 }
 
+.page-title {
+  margin: 40px 0;
+}
+
 //Button Styles
 .delete-btn .btn {
   padding: 1px 5px;
@@ -143,6 +147,9 @@ header {
   }
 
 }
+.add-assignment {
+  margin-top: 20px;
+}
 .criteria input,
 .calculations input {
   float: right;
@@ -159,10 +166,6 @@ header {
 .calculations {
   width: 90%;
   margin: 10px auto;
-}
-
-.bottom-buttons .btn:first-child {
-  margin-right: 10px;
 }
 
 .grid {

@@ -1,5 +1,5 @@
 <header>
-  <img width="200" alt="Header Logo" src="./assets/imgs/u_of_tears.png">
+  <img width="200" alt="Banner Image" src="./assets/imgs/u_of_tears.png">
 </header>
 
 <div class="banner">
@@ -10,13 +10,15 @@
   </div>
 </div>
 
-
-<div style="text-align:center">
-</div>
 <div class="cards-wrapper">
   <h1 class="page-title centered">
     Grade Calculator
   </h1>
+  <h3 class="intro-text">Welcome to the grade calculator app. Let us help you figure out what you'll need on your upcoming final to determine just how many sleepless nights you'll be spending studying to pass first year orgo with at least a 3.0 (... 2.0?).</h3>
+  <h3 class="centered">Click the "+" icon below to try it out! Don't forget to save your courses before leaving.</h3>
+  <div class="centered save-courses">
+    <button class="btn" (click)="saveCourses()">Save my courses</button>
+  </div>
 
   <h2>My Courses</h2>
   <div class="add-courses">
@@ -25,7 +27,7 @@
     </button>
   </div>
   <div class="no-items centered">
-    <span *ngIf="!courses.length">You currently do not have any courses listed. </span>Click the "+" icon to add a course.
+    <span *ngIf="!courses.length">You currently do not have any courses listed. </span>Click the "+" icon to the right to add a course.
   </div>
 
 
@@ -45,7 +47,9 @@
         <div class="criteria">How much of final grade assignment is worth (%): <input class="assignment-pct" [(ngModel)]="item.Percentage" placeholder="-"></div>
         <div class="criteria">Grade received (%): <input class="assignment-grade" [(ngModel)]="item.Grade" placeholder="-"></div>
       </div>
-
+      <div class="centered add-assignment">
+        <button class="btn" (click)="addAssignment(course)">Add Assignment</button>
+      </div>
       <div class="calculations">
         <div class="criteria">How much final exam is worth (%): <input [(ngModel)]="course.examPercentage" placeholder="-" class="exam-pct"></div>
          <div class="criteria">Grade I want to finish with (%): <input [(ngModel)]="course.finalGrade" placeholder="-"></div>
@@ -54,10 +58,8 @@
 
       <div class="bottom-buttons centered">
         <button class="btn" (click)="calculateGrade(course)">Calculate</button>
-        <button class="btn" (click)="addAssignment(course)">Add Assignment</button>
       </div>  
     </li>
 
   </ul>
 </div>
-<router-outlet></router-outlet>
