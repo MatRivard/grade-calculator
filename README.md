@@ -1,6 +1,10 @@
 # GradeCalculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+Project can be found at [https://MatRivard.github.io/grade-calculator](https://MatRivard.github.io/grade-calculator).
+
+A grade calculator helping students determine what they need to get on their final exam to finish with their desired grade. Calculated using the weighted average of term tests, laboratories, etc. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+
+Progress can be saved to local storage in order to revisit the calculations at a later time. No account creation for permanent saving functionality currently implemented however. That said, saved courses will disappear when local storage is cleared.
 
 ## Development server
 
